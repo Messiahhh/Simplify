@@ -1,0 +1,28 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+{{!-- The article  header --}}
+<header class='blogHeader'>
+    <div class='blogTitle'>{{@blog.title}}</div>
+    <div class='blogDescription'>{{@blog.description}}</div>
+</header>
+<div class="fixed" style='top: -40px'>
+    {{@blog.title}}
+</div>
+
+{{!-- The main content area --}}
+<main class='main'>
+    {{#foreach posts}}
+        <article class="article">
+            <a href="{{url}}" class='title'>{{title}}</a>
+            <p class='excerpt'>{{excerpt words="46"}} <a class="read-more" href="{{url}}">...</a></p>
+            <div class="time">
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                <a href="{{url}}" class="button"></a>
+            </div>
+        </article>
+    {{/foreach}}
+    {{pagination}}
+</main>

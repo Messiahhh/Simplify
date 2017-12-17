@@ -1,0 +1,35 @@
+
+<div class="leftBar" :class="{hidden: !show}">
+    <div class="trigger" @click='triggerEvent' :class="{show}">
+        <div class="bar">
+
+        </div>
+    </div>
+    <div class="profile_image" style='background-image: url({{@blog.logo}})'></div>
+    {{#posts.[0]}}
+        {{#if author.name}}
+            <div class="profile_name"><a href="{{@blog.url}}">{{author.name}}</a></div>
+        {{/if}}
+    {{/posts.[0]}}
+
+    <nav class="pages">
+        {{navigation}}
+    </nav>
+    <a class='ghost' href="https://ghost.org/">Published with Ghost</a>
+</div>
+
+<script type="text/javascript">
+    let leftBar = new Vue({
+        el: '.leftBar',
+        data: {
+            show: false
+        },
+        methods: {
+            triggerEvent: function () {
+                this.show = !this.show
+            }
+        }
+    })
+
+
+</script>

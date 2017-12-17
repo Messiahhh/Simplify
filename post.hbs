@@ -1,0 +1,28 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{#post}}
+    {{!-- The article  header --}}
+    <header class='blogHeader'>
+        <div class='blogTitle'>{{title}}</div>
+    </header>
+    <div class="fixed" style='top: -40px'>
+        {{title}}
+    </div>
+
+    {{!-- The main content area --}}
+    <div class="container">
+        {{content}}
+    </div>
+    <div class="leftAndRight">
+        {{#next_post}}
+            <a href="{{url}}" class='next_post'>{{title}}</a>
+        {{/next_post}}
+
+        {{#prev_post}}
+            <a href="{{url}}" class='prev_post'>{{title}}</a>
+        {{/prev_post}}
+    </div>
+
+{{/post}}

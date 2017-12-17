@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/dist/default.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    {{!-- The tag below includes the slidebar for each post - partials/sliderbar.hbs --}}
+    {{> "slidebar"}}
+    <div class="rightContent">
+        {{{body}}}
+    </div>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    <script type="text/javascript">
+        var rightContent = document.querySelector('.rightContent')
+        rightContent.addEventListener('click', function () {
+            var show = leftBar.show
+            if (show) {
+                leftBar.show = !show
+            }
+        })
+        var topBar = document.querySelector('.fixed')
+        var contain = document.querySelector('.rightContent')
+        contain.addEventListener('scroll', function () {
+            var top = contain.scrollTop
+            if (top >= 160){
+                topBar.style.top = '0'
+            }
+            if (top < 160) {
+                topBar.style.top = '-40px'
+            }
+        })
+    </script>
+    {{ghost_foot}}
+</body>
+</html>
