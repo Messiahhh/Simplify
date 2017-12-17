@@ -1,9 +1,11 @@
 Simplify
 ========
 
+[中文翻译/chinese translate](./README-zh.md)
+
 Simplify is a light and simple theme published for Ghost blog platform.
 
-And it's for **free**, i'm also appreciated for your **star** if you like it
+And it's for **free**, i'm also appreciated for your **star**✨ if you like it
 
 There is a [demo](https://daily.enzbill.com) for you
 
